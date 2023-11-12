@@ -19,11 +19,10 @@
     }
     body{
       background:
-rgba( 255, 255, 255, 0.25 );
-
+#111;
     }
     .headline{
-      
+      z-index: 70 !important;
       font-family: Times New Roman;
       position: absolute;
       top: 55px;
@@ -34,18 +33,19 @@ rgba( 255, 255, 255, 0.25 );
       padding: 10px;
     }
     .h1{
+      z-index: 70 !important;
       width: 595px;
       color: #fff;
       white-space: nowrap;
     overflow: hidden;
-    animation: moveLeft 5s linear infinite;
+    animation: moveLeft 9s linear infinite;
     }
     @keyframes moveLeft {
     0% {
-      transform: translateX(100%); /* Start off the screen on the right */
+      transform: translateX(100%); 
     }
     100% {
-      transform: translateX(-100%); /* Move to the left, off the screen */
+      transform: translateX(-100%); 
     }
   }
   .p1{
@@ -54,25 +54,34 @@ rgba( 255, 255, 255, 0.25 );
     position: absolute;
     top: 0px;
     left: 0px;
+    display:none;
   }
-  h1{
-    z-index: 80;
-    position: absolute;
-    top: 200px;
-    left: 20px;
-    font-size: 70px;
+  .navbar{
+    z-index: 70;
+    background:
+rgba( 255, 255, 255, 0.25 );
+box-shadow:
+0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter:
+blur( 4px );
+-webkit-backdrop-filter:
+blur( 4px );
+border:
+1px solid rgba( 255, 255, 255, 0.18 );
   }
     </style>
     <img src="p1.jpg" class="p1">
-<nav class="navbar navbar-expand-lg navbar-danger bg-danger">
+<nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold text-white" href="#">Headline</a>
+    <a class="navbar-brand fw-bold text-white" href="#">Boring!!!!!!!</a>
   </nav>
     <div class="headline">
     <div class="h1">
     Hello, world. Today is always boring 😂😂😂
     </div>
 </div>
-<h1 class="text-white">Boring!!!!!!!</h1>
+ <video  style="width:100%;height:100%;position:absolute;top:-30px;left:0px;" allow="autoplay" loop controls autoplay>
+   <source src="p11.mp4" type="video/mp4">
+ </video>
   </body>
 </html>
