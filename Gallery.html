@@ -105,9 +105,42 @@ color: #fff;
     Mga Wala kuwenta ko Drawing!!! Hahahahaha
     </div>
 </div>
- <video  style="width:100%;height:100%;position:absolute;top:-30px;left:0px;" allow="autoplay" loop controls autoplay>
-   <source src="p11.mp4" type="video/mp4">
- </video>
+<div class="banner">
+  <div class="slider">
+   <div class="item">
+      <img src="p1.jpg">
+   </div>
+  </div>
+</div>
+
  <a href="index.html" class=" btn-holder fw-bold">Back</a>
+ <style>
+   .banner{
+     width:100%;
+     height: 100%;
+     text-align: center;
+     overflow: hidden;
+     position: relative;
+   }
+   .banner .slider{
+     
+     height:250px;
+     width:200px;
+     top:10%;
+     left: calc(50% -100px);
+     transition: preserve-3d;
+     transform: perspective(1000px);
+   }
+      .banner .slider .item{
+        position: absolute;
+        inset:0 0 0 0;
+        transform:translateZ(550px);
+      }
+      .banner .slider .item img{
+        width:100%;
+        height: 100%;
+        object-fit: cover;
+      }
+ </style>
   </body>
 </html>
