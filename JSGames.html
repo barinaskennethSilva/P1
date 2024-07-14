@@ -1,27 +1,91 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="icon" type="image/png" href="p1.jpg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Maot Ko hahahahahha</title>
-  </head>
-  <body>
-    <style>
-    .hero{
-      background-color: red;
-      height: 50px;
-      width: 50px;
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Movement</title>
+  <style>
+    #container {
+      width: 100%;
+      height: 500px;
+      position: relative;
+      border: 1px solid black;
     }
-    </style>
-    <body>
-      <h2>Pa Backer Crush!!!!</h2>
-     
-  <div class="hero"></div>   
-  <button>Top</button>
-    <button>Left</button>
-  <button>Right</button>
-  <button>Bottom</button>
-       <a href="index.html" class=" btn-holder fw-bold">Back</a>
-    </body>
-    </html>
+    #hero {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background-color: red;
+    }
+    .control {
+      margin: 5px;
+    }
+    #block{
+      height: 200px;
+      width: 10px;
+      background-color: #111;
+      position: absolute;
+      left: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="hero"></div>
+        <div id="block"></div>
+  </div>
+  <button id="controlLeft" class="control">Left</button>
+  <button id="controlUp" class="control">Up</button>
+  <button id="controlRight" class="control">Right</button>
+  <button id="controlDown" class="control">Down</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hero = document.getElementById('hero');
+      const container = document.getElementById('container');
+      const block = document.getElementById('block');
+      const controlLeft = document.getElementById('controlLeft');
+      const controlUp = document.getElementById('controlUp');
+      const controlRight = document.getElementById('controlRight');
+      const controlDown = document.getElementById('controlDown');
+      let positionX = 0;
+      let positionY = 0;
+
+      controlLeft.addEventListener('click', () => {
+        positionX -= 10; // Move the image 10px left
+        if (positionX < 0) positionX = 0; // Prevent the image from moving out of the container
+        hero.style.left = `${positionX}px`;
+      });
+
+      controlUp.addEventListener('click', () => {
+        positionY -= 10; // Move the image 10px up
+        if (positionY < 0) positionY = 0; // Prevent the image from moving out of the container
+        hero.style.top = `${positionY}px`;
+      });
+
+      controlRight.addEventListener('click', () => {
+        positionX += 10; // Move the image 10px right
+        if (positionX > container.offsetWidth - hero.offsetWidth) 
+        positionX = container.offsetWidth - hero.offsetWidth; 
+        
+        // Prevent the image from moving out of the container
+hero.style.left = `${positionX}px`;
+       if (positionX > block.offsetWidth - hero.offsetWidth)
+        positionX = block.offsetHeight - hero.offsetWidth;
+        
+        hero.style.left = `${positionX}px`;
+      });
+      
+      
+      
+      
+
+      controlDown.addEventListener('click', () => {
+        positionY += 10; // Move the image 10px down
+        if (positionY > container.offsetHeight - hero.offsetHeight) positionY = container.offsetHeight - hero.offsetHeight; // Prevent the image from moving out of the container
+        hero.style.top = `${positionY}px`;
+      });
+    });
+  </script>
+</body>
+</html>
