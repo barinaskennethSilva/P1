@@ -38,8 +38,12 @@
   <button id="controlUp" class="control">Up</button>
   <button id="controlRight" class="control">Right</button>
   <button id="controlDown" class="control">Down</button>
-
+  <button id="quit-btn" class="btn btn-danger quit-btn">Quit</button>
   <script>
+  const quitBtn = document.querySelector('#quit-btn');
+  quitBtn.addEventListener('click', ()=>{
+    window.open('index.html');
+  });
     document.addEventListener('DOMContentLoaded', () => {
       const hero = document.getElementById('hero');
       const container = document.getElementById('container');
