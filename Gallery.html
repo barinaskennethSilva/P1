@@ -78,13 +78,26 @@ blur( 4px );
 border:
 1px solid rgba( 255, 255, 255, 0.18 );
   color: #fff;
-l
       }
+      .container{
+        height: 40vh;
+        width: 100%;
+      background-color: red;
+      }
+   .btn-Holder{
+     position: relative;
+     bottom: 180px;
+   }   
   </style>
 <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
     <a class="navbar-brand fw-bold text-white" href="index.html"><i class='fa fa-angle-left'></i>My Gallery</a>
   </nav>
+
+
+<div class="container">
+  
+</div>
 
 
 <div class="banner">
@@ -111,10 +124,18 @@ l
 </div>
 
 
-
+<div class="btn-Holder">
 <button class="btn-prev"> <i class='fa fa-angle-left'></i></button>
 <button class="btn-next float-end me-4"> <i class='fa fa-angle-right'></i></button>
-
-
+</div>
+<script>
+ let btnPrev = document.querySelector('.btn-prev');
+ let btnNext = document.querySelector('.btn-next');
+ 
+ btnNext.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').appendChild(items[0])
+})
+</script>
 </body>
 </html>
